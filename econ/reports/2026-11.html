@@ -1,0 +1,379 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>経済指標月報 2026年11月</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600;700&display=swap">
+<style>
+/* Layout: 研究所の月報。左に細い章番号の柱、本文は65字幅、表とグラフは本文より広く使う */
+:root{
+  --bg:#f3f5f7; --paper:#ffffff; --ink:#15202c; --muted:#5b6776; --rule:#d8dee6; --accent:#1f4c97;
+  --hot:#a8322a; --cool:#1b7a4b; --chip:#e8edf4;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --grid:rgba(21,32,44,.08); --axis:rgba(21,32,44,.35);
+  --f-display:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1319; --paper:#151c24; --ink:#e4e9ef; --muted:#9ba7b5; --rule:#2a3441; --accent:#86aef0;
+  --hot:#ef8a7f; --cool:#5fcf98; --chip:#1f2833;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --grid:rgba(228,233,239,.08); --axis:rgba(228,233,239,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1319; --paper:#151c24; --ink:#e4e9ef; --muted:#9ba7b5; --rule:#2a3441; --accent:#86aef0;
+  --hot:#ef8a7f; --cool:#5fcf98; --chip:#1f2833;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --grid:rgba(228,233,239,.08); --axis:rgba(228,233,239,.35); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.85;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1000px;margin:0 auto}
+header.mast{padding-block:40px 28px;border-bottom:2px solid var(--ink);display:grid;gap:10px}
+.inst{font-family:var(--f-data);font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.25;margin:0;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section{padding-block:34px 8px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 20px}
+.no{font-family:var(--f-data);color:var(--accent);font-size:13px;padding-top:6px;letter-spacing:.06em}
+.body{min-width:0}
+h2{font-family:var(--f-display);font-size:24px;font-weight:700;margin:0 0 6px;text-wrap:balance}
+h3{font-size:16px;font-weight:700;margin:26px 0 4px}
+p{margin:8px 0;max-width:68ch}
+.lead{font-size:16.5px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;padding:0 7px;border-radius:3px;margin-right:6px;vertical-align:2px;font-weight:500}
+.tag.f{background:var(--chip);color:var(--ink)}
+.tag.i{border:1px solid var(--accent);color:var(--accent)}
+.src{font-size:12px;color:var(--muted)}
+.num,td.num{font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hot{color:var(--hot)} .cool{color:var(--cool)}
+ul.find{padding-left:0;list-style:none;display:grid;gap:12px;margin:14px 0}
+ul.find li{padding-left:16px;border-left:2px solid var(--rule);max-width:72ch}
+ul.find b{font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:18px 0 6px}
+.tile{background:var(--paper);padding:12px 14px;display:grid;gap:2px;align-content:start}
+.tile .k{font-size:12px;color:var(--muted)}
+.tile .v{font-family:var(--f-data);font-size:24px;font-weight:500;line-height:1.3}
+.tile .d{font-size:12px;color:var(--muted)}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--rule);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;background:var(--bg);white-space:nowrap}
+tbody th{font-weight:500;white-space:nowrap}
+td.num{text-align:right}
+td.small{font-size:12px;color:var(--muted)}
+.pill{font-family:var(--f-data);font-size:11px;padding:1px 7px;border-radius:10px}
+.pill.ok{background:color-mix(in srgb,var(--cool) 18%,transparent);color:var(--cool)}
+.pill.ng{background:color-mix(in srgb,var(--hot) 18%,transparent);color:var(--hot)}
+figure{margin:16px 0;background:var(--paper);border:1px solid var(--rule);padding:12px 12px 8px}
+figcaption{font-size:13px;font-weight:500;margin-bottom:4px}
+figcaption .src{font-weight:400;display:block}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--f-data);font-size:11px;fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:2px 0 6px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.tip{position:absolute;pointer-events:none;background:var(--paper);border:1px solid var(--rule);box-shadow:0 4px 14px rgba(0,0,0,.12);
+  padding:6px 9px;font-size:12px;font-family:var(--f-data);white-space:nowrap;border-radius:4px;z-index:2}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.two figure{margin:0}
+.note{font-size:13px;color:var(--muted);border-left:2px solid var(--accent);padding:4px 0 4px 12px;margin:14px 0;max-width:72ch}
+ol.ref{font-size:13px;padding-left:20px;max-width:80ch}
+ol.ref li{margin:4px 0}
+.cal{display:grid;gap:6px;margin:10px 0}
+.cal div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:14px}
+.cal div span:first-child{font-family:var(--f-data);color:var(--accent)}
+a{color:var(--accent)}
+@media (max-width:640px){section{grid-template-columns:1fr}.no{padding-top:0}body{font-size:15px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="inst">Personal Economic Research Office · Monthly Bulletin No.1</div>
+  <h1>米国経済指標 月報<br>2026年11月</h1>
+  <div class="meta">
+    <span>対象 <b>2026年10月24日〜11月23日に公表された統計</b></span>
+    <span>データ取得 <b>2026-11-24 11:52 UTC</b></span>
+    <span>一次情報 <b>FRED 収録の公表機関データ</b></span>
+    <span>検証 <b>14項目すべてPASS</b></span>
+  </div>
+</header>
+
+<section id="summary"><div class="no">要旨</div><div class="body">
+<h2>景気は強く、物価はエネルギー主導で高止まり。月末に市場が急変</h2>
+<p class="lead">本号は、過去1か月に公表された米国の主要統計を、公表機関の一次データだけで検証し直したものです。民間予想(コンセンサス)は一次情報で確かめられないため使っていません。各段落は「事実」と、学術研究の枠組みを当てはめた「解釈」に分けて書いています。</p>
+<div class="tiles">
+  <div class="tile"><span class="k">実質GDP 7-9月期</span><span class="v">3.4%</span><span class="d">前期比年率</span></div>
+  <div class="tile"><span class="k">雇用者数 10月</span><span class="v">+165</span><span class="d">千人・3か月平均 137</span></div>
+  <div class="tile"><span class="k">失業率 10月</span><span class="v">4.1%</span><span class="d">前月 4.2%</span></div>
+  <div class="tile"><span class="k">コアCPI 10月</span><span class="v">0.30%</span><span class="d">前月比・3か月年率 3.7%</span></div>
+  <div class="tile"><span class="k">コアPCE 9月</span><span class="v">3.12%</span><span class="d">前年比</span></div>
+  <div class="tile"><span class="k">実効FF金利</span><span class="v">3.88%</span><span class="d">目標 3.75〜4.00%</span></div>
+</div>
+<ul class="find">
+  <li><b>成長は堅調。</b>7-9月期の実質GDPは年率3.4%。純輸出が−3.32%pt押し下げた一方、機械設備投資が年率20.9%と急伸し、消費と固定投資を合わせた民間最終需要の寄与は4.21%ptに達した。</li>
+  <li><b>物価は目標を上回ったまま。</b>10月のコアCPIは前月比0.30%(3か月年率3.7%)。9月のコアPCEは前年比3.12%。2025年10月のCPIが未公表のため、10月分の前年比は算出できない。</li>
+  <li><b>原油は下落に転じた。</b>WTIは期間中に109.72→89.53ドル(−18.4%)。10年BEIは−21bp動き、総合インフレの先行きには下押し材料となる。</li>
+  <li><b>労働市場は崩れていない。</b>10月の雇用者は+165千人、失業率4.1%、サーム・ルール指標0.00pt。ただし実質賃金と実質可処分所得は伸びが止まり、貯蓄率は3.8%まで下がった。</li>
+  <li><b>市場は月末に急変。</b>S&amp;P500は−9.4%、VIXは19.4→35.9、HYスプレッドは+38bp拡大。大きく下げた11/5と11/20は主要統計の公表日ではなく、統計だけでは原因を特定できない。</li>
+</ul>
+</div></section>
+
+<section id="releases"><div class="no">01</div><div class="body">
+<h2>期間中に公表された主要統計</h2>
+<p>公表日はFREDの発表カレンダー(release id 別)で確認した米国東部時間の日付です。ミシガン大学消費者信頼感(11/20公表の11月確報)はFREDへの収録が1か月遅れるため、本号では扱いません。</p>
+<div class="tw"><table>
+<thead><tr><th>公表日</th><th>統計</th><th>公表機関</th><th>対象期間</th><th>主な結果</th></tr></thead>
+<tbody>
+<tr><td class=num>10/27</td><td>新築住宅販売・住宅着工(遅延分)</td><td>Census</td><td>9月</td><td class=num>新築販売 年率676千戸</td></tr>
+<tr><td class=num>10/27</td><td>ケース・シラー住宅価格</td><td>S&P</td><td>8月</td><td class=num>前年比 2.1%</td></tr>
+<tr><td class=num>10/27</td><td>M2(H.6)</td><td>FRB</td><td>9月</td><td class=num>前年比 5.7%</td></tr>
+<tr><td class=num>10/29</td><td>GDP速報値</td><td>BEA</td><td>7-9月期</td><td class=num>前期比年率 3.4%</td></tr>
+<tr><td class=num>10/29</td><td>個人所得・支出</td><td>BEA</td><td>9月</td><td class=num>コアPCE前年比 3.12%</td></tr>
+<tr><td class=num>10/30</td><td>雇用コスト指数</td><td>BLS</td><td>7-9月期</td><td class=num>前年比 3.4%</td></tr>
+<tr><td class=num>11/02</td><td>建設支出</td><td>Census</td><td>9月</td><td class=num>前月比 −1.9%</td></tr>
+<tr><td class=num>11/03</td><td>製造業受注(確報)</td><td>Census</td><td>9月</td><td class=num>コア資本財受注 前月比 +0.65%</td></tr>
+<tr><td class=num>11/03</td><td>JOLTS求人</td><td>BLS</td><td>9月</td><td class=num>求人 7.52百万件</td></tr>
+<tr><td class=num>11/04</td><td>貿易収支</td><td>Census/BEA</td><td>9月</td><td class=num>-105.0十億ドル</td></tr>
+<tr><td class=num>11/05</td><td>労働生産性</td><td>BLS</td><td>7-9月期</td><td class=num>年率 +3.6%</td></tr>
+<tr><td class=num>11/06</td><td>雇用統計</td><td>BLS</td><td>10月</td><td class=num>雇用者 +165千人・失業率 4.1%</td></tr>
+<tr><td class=num>11/06</td><td>消費者信用</td><td>FRB</td><td>9月</td><td class=num>前月比 +0.54%</td></tr>
+<tr><td class=num>11/10</td><td>消費者物価(CPI)</td><td>BLS</td><td>10月</td><td class=num>総合 +0.35%・コア +0.30%(前月比)</td></tr>
+<tr><td class=num>11/12</td><td>中古住宅販売</td><td>NAR</td><td>10月</td><td class=num>年率 3.75百万戸</td></tr>
+<tr><td class=num>11/13</td><td>生産者物価(PPI)</td><td>BLS</td><td>10月</td><td class=num>最終需要 前年比 6.5%</td></tr>
+<tr><td class=num>11/17</td><td>小売売上高</td><td>Census</td><td>10月</td><td class=num>前月比 +0.21%</td></tr>
+<tr><td class=num>11/17</td><td>輸入物価</td><td>BLS</td><td>10月</td><td class=num>前月比 +1.05%</td></tr>
+<tr><td class=num>11/17</td><td>鉱工業生産</td><td>FRB</td><td>10月</td><td class=num>前月比 −0.43%</td></tr>
+<tr><td class=num>11/18</td><td>住宅着工・建築許可</td><td>Census</td><td>10月</td><td class=num>着工 年率1309千戸</td></tr>
+<tr><td class=num>毎週木</td><td>新規失業保険申請</td><td>DOL</td><td>〜11/14週</td><td class=num>203千件</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section id="prices"><div class="no">02</div><div class="body">
+<h2>物価:コアは3%前後、総合はエネルギー次第</h2>
+<figure><figcaption>インフレ率の推移(前年比)<span class="src">出所:BLS(CPIAUCSL, CPILFESL)、BEA(PCEPILFE)via FRED。2025年10月を基準にする月は前年比を計算できないため空白。</span></figcaption>
+<div class="chart" data-chart="infl"></div></figure>
+
+<h3>CPI(10月、11/10公表)</h3>
+<p><span class="tag f">事実</span>総合は前月比0.35%、コアは0.30%。コアの3か月年率は3.7%、6か月年率は2.7%。コアの前月比0.30%は、2015年以降(2020-21年を除く)の分布で75パーセンタイル(z=0.46)に当たる。エネルギー除くサービスは前月比0.34%(3か月年率4.2%)、住居費0.30%、コア財0.16%。エネルギーは9月に5.2%と急騰したあと10月は0.70%。9月時点のエネルギー前年比は20.4%。</p>
+<p><span class="tag f">事実</span>2025年10月のCPIはFRED上で欠測(2025年秋の連邦政府閉鎖により公表されず)。そのため2026年10月の前年比は指数から計算できない。代わりに13か月前(2025年9月)からの年率を見ると、総合3.76%、コア2.65%。直近の確定した前年比は9月の総合3.72%、コア2.57%。</p>
+<div class="tw"><table>
+<thead><tr><th>系列</th><th>前月比 10月</th><th>前月比 9月</th><th>3か月年率</th><th>6か月年率</th><th>13か月年率</th><th>前年比 9月</th></tr></thead>
+<tbody>
+<tr><th>CPI 総合</th><td class=num>+0.35</td><td class=num>+0.65</td><td class=num>5.72</td><td class=num>3.07</td><td class=num>3.76</td><td class=num>3.72</td></tr>
+<tr><th>コアCPI(食品・エネルギー除く)</th><td class=num>+0.30</td><td class=num>+0.33</td><td class=num>3.75</td><td class=num>2.69</td><td class=num>2.65</td><td class=num>2.57</td></tr>
+<tr><th>　エネルギー除くサービス</th><td class=num>+0.34</td><td class=num>+0.37</td><td class=num>4.22</td><td class=num>3.23</td><td class=num>3.23</td><td class=num>3.16</td></tr>
+<tr><th>　住居費</th><td class=num>+0.30</td><td class=num>+0.39</td><td class=num>3.90</td><td class=num>3.11</td><td class=num>3.26</td><td class=num>3.22</td></tr>
+<tr><th>　帰属家賃(OER)</th><td class=num>+0.32</td><td class=num>+0.35</td><td class=num>3.48</td><td class=num>3.35</td><td class=num>3.33</td><td class=num>3.28</td></tr>
+<tr><th>　コア財</th><td class=num>+0.16</td><td class=num>+0.25</td><td class=num>2.09</td><td class=num>1.03</td><td class=num>0.81</td><td class=num>0.71</td></tr>
+<tr><th>エネルギー</th><td class=num>+0.70</td><td class=num>+5.20</td><td class=num>36.82</td><td class=num>8.91</td><td class=num>19.42</td><td class=num>20.35</td></tr>
+<tr><th>食料</th><td class=num>+0.47</td><td class=num>+0.05</td><td class=num>2.60</td><td class=num>2.18</td><td class=num>2.71</td><td class=num>2.45</td></tr>
+<tr><th>PPI 最終需要</th><td class=num>+0.35</td><td class=num>+1.41</td><td class=num>9.01</td><td class=num>5.45</td><td class=num>6.13</td><td class=num>6.29</td></tr>
+<tr><th>PPI 食品・エネルギー除く</th><td class=num>+0.33</td><td class=num>+0.82</td><td class=num>5.48</td><td class=num>4.14</td><td class=num>4.94</td><td class=num>5.02</td></tr>
+<tr><th>輸入物価</th><td class=num>+1.05</td><td class=num>+1.06</td><td class=num>11.12</td><td class=num>7.85</td><td class=num>8.49</td><td class=num>8.10</td></tr>
+</tbody></table></div>
+<p class="src">単位:%。PPI(最終需要)は2025年10月も公表されているため、本文では10月の前年比を使う。PCEは9月が最新。</p>
+
+<h3>基調インフレ(中銀研究部門の指標)</h3>
+<p><span class="tag f">事実</span>10月のクリーブランド連銀・中央値CPIは前月比年率3.7%、16%刈込平均CPIは4.5%。アトランタ連銀の粘着価格コアCPIは前年比3.06%。9月のダラス連銀・刈込平均PCEは前年比2.26%で、コアPCE(3.12%)を大きく下回る。</p>
+<p><span class="tag i">解釈</span>中央値・刈込平均は、価格変化の分布の両端を落として基調を測る(Bryan &amp; Cecchetti 1994、Dolmas 2005)。コアPCEが刈込平均を0.9%pt近く上回るのは、一部の品目の大きな値上がりが平均を押し上げている形で、広く全品目に及ぶ過熱よりも、特定分野へのショックに近い姿と読める。一方、10月単月の刈込平均CPIは年率4.5%と高く、1か月だけでは判断しにくい。</p>
+
+<h3>生産者物価と輸入物価</h3>
+<p><span class="tag f">事実</span>PPI最終需要は10月に前月比0.35%(9月1.41%)、前年比6.5%。食品・エネルギーを除くPPIも前年比5.0%。輸入物価は前月比1.05%、3か月年率11.1%、9月の前年比8.1%。</p>
+<p><span class="tag i">解釈</span>川上の価格(PPI・輸入物価)の伸びが消費者物価を大きく上回っており、企業がコストをまだ価格に転嫁しきっていない可能性がある。消費財価格への波及は今後数か月のコア財CPIで確認する。</p>
+
+<h3>PCE物価(9月、10/29公表)</h3>
+<p><span class="tag f">事実</span>PCE総合は前年比3.65%、コアは3.12%。コアの前月比0.32%はz=0.92、3か月年率2.9%。</p>
+
+<h3>期待インフレ</h3>
+<p><span class="tag f">事実</span>ミシガン大学の1年先期待インフレは10月4.7%。市場の10年BEIは期間中に2.34%→2.13%、5年先5年は2.11%。</p>
+<p><span class="tag i">解釈</span>家計の期待はガソリン価格に強く反応することが知られている(Coibion &amp; Gorodnichenko 2015)。市場の長期期待は2%台前半で安定しており、家計の期待だけが高い状態。ガソリン小売価格は9月下旬の高値から下がっており、家計の期待が今後下がるかが確認点になる。</p>
+
+<div class="note"><b>12月公表の11月CPIに注意(機械的な上振れ要因)。</b>2025年9月→11月のコアCPIの2か月変化は0.19%で、2025年1〜9月の平均的な2か月変化(0.45%)を0.26%pt下回る。住居費も0.24%(平均0.54%)。前年の11月の水準が低いぶん、2026年11月の前年比は実勢より高めに出やすい。BLSの欠測処理の詳細は公表資料での確認が必要。</div>
+</div></section>
+
+<section id="labor"><div class="no">03</div><div class="body">
+<h2>労働:雇用は回復、需給はほぼ均衡</h2>
+<div class="two">
+<figure><figcaption>非農業部門雇用者数(前月差、千人)<span class="src">出所:BLS(PAYEMS)via FRED。現行ヴィンテージ。</span></figcaption><div class="chart" data-chart="pay"></div></figure>
+<figure><figcaption>求人件数 ÷ 失業者数(V/U)<span class="src">出所:BLS JOLTS(JTSJOL)・CPS(UNEMPLOY)より計算</span></figcaption><div class="chart" data-chart="vu"></div></figure>
+</div>
+<h3>雇用統計(10月、11/6公表)</h3>
+<p><span class="tag f">事実</span>非農業部門雇用者は+165千人(9月+60、8月+186)。3か月平均137千人、6か月平均82千人、12か月平均74千人。民間+159、製造業+19、連邦政府-1。家計調査の就業者は+463千人、労働力人口は+421千人増えた。</p>
+<p><span class="tag f">事実</span>失業率4.1%(失業者÷労働力で再計算すると4.14%)、U-6は7.6%→7.9%に上昇。労働参加率61.9%、25-54歳の就業率80.7%。失業者のうち27週以上の長期失業の割合は27.1%→27.6%。</p>
+<p><span class="tag f">事実</span>平均時給は前月比0.37%、前年比3.12%。9月の前年比(3.16%)からCPI前年比を引いた実質賃金は−0.56%pt。7-9月期の雇用コスト指数は前年比3.37%(民間賃金3.12%)。労働生産性は年率3.6%(前年比2.1%)、単位労働コストは年率−0.7%(前年比2.4%)。</p>
+<p><span class="tag i">解釈</span>高い生産性の伸びが賃金の伸びを吸収し、単位労働コストは前年比2.4%、直近四半期は年率−0.7%にとどまる。労働コストが物価を押し上げている証拠は弱い。今回のインフレは賃金主導ではなく、エネルギーと川上価格が主因という見方と整合する。U-6の上昇と長期失業の割合の上昇は、雇用の伸びが一部の層に届いていない兆候として注視する。</p>
+<h3>JOLTS(9月)と失業保険</h3>
+<p><span class="tag f">事実</span>求人7.52百万件、V/U=1.06。自発的離職率は1.9%→2.1%、採用率3.4%、解雇率1.0%。新規失業保険申請は203千件(11/14週)、継続受給者は1.695百万→1.763百万人。</p>
+<p><span class="tag i">解釈</span>Benigno &amp; Eggertsson(2023)は、V/Uが1を超えると賃金・物価が労働需給に強く反応する(フィリップス曲線が急になる)ことを示した。V/Uは1.06で境目に近く、労働市場は過熱でも悪化でもない。サーム・ルール(Sahm 2019)は0.00ptで、景気後退のシグナル(0.5pt)から遠い。</p>
+</div></section>
+
+<section id="growth"><div class="no">04</div><div class="body">
+<h2>成長と需要:設備投資が主役、家計の体力に陰り</h2>
+<figure><figcaption>7-9月期 実質GDP成長率 3.4% の寄与度(%pt)<span class="src">出所:BEA NIPA 表1.1.2 via FRED。寄与度の合計は再計算で3.37%(公表3.4%)。</span></figcaption><div class="chart" data-chart="gdp"></div></figure>
+<h3>GDP速報(7-9月期、10/29公表)</h3>
+<p><span class="tag f">事実</span>実質GDPは前期比年率3.4%、前年比2.07%。寄与度は個人消費2.52、固定投資1.66、在庫1.61、政府0.90、純輸出−3.32(%pt)。非住宅投資は年率12.7%(うち機械設備20.9%、知的財産8.4%)、住宅投資−3.3%。実質輸出−5.7%、実質輸入19.7%。実質最終販売は1.7%、GDPデフレーターは2.2%。</p>
+<p><span class="tag i">解釈</span>輸入の急増と設備投資の急増が同時に起きている。GDP統計では、輸入した資本財は投資に加算され、同じ額が輸入として差し引かれる。純輸出の大きなマイナスは、国内需要の弱さではなく、輸入品による設備投資の強さの裏返しと読むのが会計上は自然。品目別の内訳(情報処理機器など)は次の改定値で確認する。アトランタ連銀GDPNowの10-12月期推計は3.21%。</p>
+<h3>家計:所得と消費</h3>
+<p><span class="tag f">事実</span>9月の実質個人消費は前月比0.02%(8月0.55%)、実質可処分所得は−0.27%(前年比0.95%)。貯蓄率は3.8%(1年前5.1%)。10月の小売売上高は名目0.21%(9月0.83%)、物価調整後の実質−0.14%。自動車・ガソリン・建材・外食を除くコントロール・グループ(本研究所で計算)は0.58%(9月0.53%)。ミシガン大学消費者信頼感は10月48.0(1年前53.6)。</p>
+<p><span class="tag i">解釈</span>実質所得がほぼ伸びない中で、消費は貯蓄の取り崩しで支えられている。エネルギー価格の上昇は家計の実質所得を削る(Hamilton 2003)。原油安が続けば実質所得の下支えになるが、貯蓄率がすでに低く、消費の伸びが鈍る余地は大きい。</p>
+<h3>企業部門・住宅・貿易</h3>
+<p><span class="tag f">事実</span>10月の鉱工業生産は前月比−0.43%、うち製造業は0.27%、設備稼働率76.8%→76.4%。9月の耐久財受注は1.91%、コア資本財受注(非国防・航空機除く)は0.65%(前年比13.7%)。建設支出は−1.85%。住宅着工は年率1191→1309千戸、建築許可は1398→1295千戸、中古住宅販売は3.97→3.75百万戸、30年住宅ローン金利7.28%。9月の貿易赤字は−105.0十億ドル(1年前−59.4)、輸入は前年比21.3%、輸出は10.0%。</p>
+<p><span class="tag i">解釈</span>製造業が増えた一方で鉱工業全体が減ったため、10月の減少は製造業以外(公益・鉱業)による。コア資本財受注の前年比2桁増は、GDPの設備投資の強さが10-12月期も続くことを示唆する。住宅は7%台の住宅ローン金利のもとで、許可と中古販売が弱い。</p>
+</div></section>
+
+<section id="policy"><div class="no">05</div><div class="body">
+<h2>金融政策と市場:ルールより緩い政策、月末のリスク回避</h2>
+<h3>政策金利と政策ルール</h3>
+<p><span class="tag f">事実</span>FF金利の誘導目標は3.75〜4.00%(2026年9月に0.25%pt引き上げ後、期間中は不変)。実効FF金利3.88%からコアPCE前年比を引いた実質政策金利は0.76%。CBOの自然失業率は4.39%で、失業率との差は0.29%pt。</p>
+<div class="tw"><table>
+<thead><tr><th>ルール</th><th>中立金利 r* = 0.5%</th><th>r* = 1.0%</th></tr></thead>
+<tbody>
+<tr><th>Taylor (1993)</th><td class=num>4.47%</td><td class=num>4.97%</td></tr>
+<tr><th>Balanced approach(Yellen 2012)</th><td class=num>4.76%</td><td class=num>5.26%</td></tr>
+<tr><th>実際の実効FF金利</th><td class=num>3.88%</td><td class=num>3.88%</td></tr>
+</tbody></table></div>
+<p class="src">計算:r* + π + 0.5(π − 2) + b × 2(u* − u)。πはコアPCE前年比、u*はCBO自然失業率、失業ギャップはオークン係数2で産出ギャップに換算。b は Taylor 0.5、balanced 1.0。r* は推計の幅が大きいため2通り示す。</p>
+<p><span class="tag i">解釈</span>標準的なルールは4.47〜5.26%を示し、実際の金利はこれより59〜138bp低い。ただし、ルールは供給ショック(エネルギー)を一時的なものとして見過ごす判断や、政策効果の遅れを考慮しない。物価の基調(刈込平均PCE)が低めであることは、FRBが追加利上げを急がない根拠になりうる。12/9-10のFOMCでは、コア物価の3か月年率とエネルギーの下落のどちらを重く見るかが焦点になる。</p>
+
+<h3>債券・株式・信用</h3>
+<div class="two">
+<figure><figcaption>米国債利回り(%)と統計の公表日<span class="src">出所:米財務省(DGS2, DGS10)via FRED。縦線は主要統計の公表日。</span></figcaption><div class="chart" data-chart="yld"></div></figure>
+<figure><figcaption>S&amp;P500<span class="src">出所:S&amp;P Dow Jones Indices(SP500)via FRED</span></figcaption><div class="chart" data-chart="spx"></div></figure>
+</div>
+<p><span class="tag f">事実</span>10/23→11/20に、2年債利回り−6bp(4.63%)、10年債−8bp(4.92%)、10年実質金利+11bp(2.77%)、10年BEI−21bp。S&amp;P500は7,624→6,910(−9.4%)、VIXは19.4→35.9、HYスプレッド3.38%→3.76%(+38bp)、IGスプレッド+7bp。広義ドル指数+1.9%。WTIは109.72→89.53ドル(−18.4%、最新は11/17)。</p>
+<p><span class="tag f">事実</span>公表日の値動き:CPI公表日(11/10)に2年債は+17bp、10年債は+10bp上昇。2023年以降の2年債の日次変化の標準偏差は6.8bpで、CPI日の変化は約2.5標準偏差。S&amp;P500の大きな下落日は11/5(−4.36%)と11/20(−3.70%)で、どちらも主要統計(雇用・CPI・PPI・小売・GDP)の公表日ではない。</p>
+<p><span class="tag i">解釈</span>指標発表日の金利反応で情報の重みを測る手法(Gürkaynak, Sack &amp; Swanson 2005)に従えば、期間中に市場が最も反応した統計はCPIで、物価への感応度が高い。株価の急落は統計公表と重ならず、マクロ統計以外の要因によるとみられるが、一次統計からは原因を特定できない。名目金利の低下は期待インフレの低下(原油安)によるもので、実質金利はむしろ上昇しており、株式にとって金融環境は引き締まった。社債スプレッドの拡大は将来の景気の弱さに先行する傾向がある(Gilchrist &amp; Zakrajšek 2012)。週次の金融環境指数(NFCI −0.478、セントルイス連銀ストレス指数 −0.87)は11/13時点までで、月末の急変をまだ反映していない。</p>
+
+<h3>景気後退確率</h3>
+<p><span class="tag f">事実</span>10年−3か月金利差の10月平均は0.90%pt(11/23時点0.55)。これをNY連銀型のプロビット(Estrella &amp; Mishkin 1998の係数)に当てはめた12か月先の景気後退確率は13.4%(本研究所の近似計算)。Chauvet-Pigerの平滑化確率(9月)は0.4%。</p>
+<p><span class="tag i">解釈</span>金利差、サーム・ルール、実体指標のいずれも、景気後退が近いことを示していない。リスクは景気の側より、物価と金融市場の側にある。</p>
+</div></section>
+
+<section id="outlook"><div class="no">06</div><div class="body">
+<h2>総合評価と次の確認点</h2>
+<p><span class="tag i">解釈</span>米国経済は「強い成長・3%前後のコア物価・均衡した労働市場」という組み合わせにある。総合インフレを押し上げてきたエネルギーは10月下旬から下がり始め、期待インフレも低下した。一方で、家計の実質所得の停滞と低い貯蓄率、月末の金融市場の急変は、成長の持続性に対するリスクとして残る。FRBにとっては、政策ルールが示す水準と、供給ショックを見過ごす判断のあいだで難しい局面が続く。</p>
+<div class="cal">
+  <div><span>11/25</span><span>GDP改定値(7-9月期)・個人所得支出(10月):コアPCEの3か月年率、実質可処分所得</span></div>
+  <div><span>12/1</span><span>JOLTS(10月):V/Uが1を上回るか</span></div>
+  <div><span>12/4</span><span>雇用統計(11月):U-6と長期失業の割合、平均時給</span></div>
+  <div><span>12/9-10</span><span>FOMC:政策金利と経済見通し</span></div>
+  <div><span>12/10</span><span>CPI(11月):前年の低い水準による上振れを差し引いて読む</span></div>
+</div>
+<p class="src">日付は米国東部時間。FREDの発表カレンダーとFRBの公表日程による。</p>
+</div></section>
+
+<section id="verify"><div class="no">07</div><div class="body">
+<h2>検証記録と限界</h2>
+<p>数値はすべてFRED(セントルイス連銀)から取得した各公表機関のデータで、以下の検証を通ったものだけを使っています。検証は <span class="num">econ/analyze.py</span> で自動化しており、1項目でもFAILならレポートを作らない設定です。</p>
+<div class="tw"><table>
+<thead><tr><th>結果</th><th>検証項目</th><th>根拠の数値</th><th>方法</th></tr></thead>
+<tbody>
+<tr><td><span class='pill ok'>PASS</span></td><td>FRED 2回取得の一致</td><td class=small>118/118 系列がバイト単位で一致</td><td class=small>fredgraph.csv を時間をおいて2回取得し比較</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>系列IDと正式タイトルの対応</td><td class=small>118/118 系列のタイトルを取得・目視確認済み(不備 なし)</td><td class=small>fred.stlouisfed.org/series/<ID> のページタイトルを取得し、日本語ラベルとの対応を確認</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>サイト既存データ(別取得)との一致</td><td class=small>29項目を照合、不一致 なし</td><td class=small>data/macro_data.json(2026-11-24 11:09 UTC に別スクリプトで取得)の値と照合</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>失業率 = 失業者数 ÷ 労働力人口</td><td class=small>7068/170683 = 4.141% → 公表 4.1%</td><td class=small>BLS家計調査の定義</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>労働力人口 = 就業者 + 失業者</td><td class=small>163615+7068=170683 / 公表 170683</td><td class=small>BLS家計調査の定義(千人単位の丸め±1)</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>実質GDP年率 = 実質GDP水準から再計算</td><td class=small>(24611.077/24408.011)^4-1 = 3.37% → 公表 3.4%</td><td class=small>BEA NIPAの年率換算式</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>GDP寄与度の合計 = 成長率</td><td class=small>消費+投資+純輸出+政府 = 3.37 / 公表 3.4</td><td class=small>NIPA表1.1.2(丸め誤差±0.05)</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>名目PCE÷実質PCE の伸び ≈ PCE価格指数の伸び</td><td class=small>暗黙デフレーター 0.491% / PCEPI 0.491%</td><td class=small>連鎖指数の非加法性による微差のみ許容</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>10年-2年スプレッドの再計算</td><td class=small>4.92-4.63 vs T10Y2Y 0.29</td><td class=small>財務省の定期利回りから差分</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>名目10年 = 実質10年 + BEI</td><td class=small>2.77+2.15=4.92 / 名目 4.92</td><td class=small>フィッシャー式(BEIの定義)</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>実効FF金利が誘導目標レンジ内</td><td class=small>3.75 ≤ 3.88 ≤ 4.0</td><td class=small>FOMCの政策運営</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>CPI前年比(9月):季節調整済 ≈ 原数値</td><td class=small>SA 3.72% / NSA 3.74%</td><td class=small>BLSの公式前年比はNSAベース。SAとの差が小さいことを確認(10月は前年値欠測のため9月で実施)</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>欠測の特定(2025年10月)</td><td class=small>欠測系列: CE16OV, CIVPART, CLF16OV, CPIAUCNS, CPIAUCSL, CPIENGSL, CPILFENS, CPILFESL, CPIUFDSL, CUSR0000SACL1E, CUSR0000SAH1, CUSR0000SASLE, CUSR0000SEHC, IR, LNS12300060, LNS13025703, RRSFS, SAHMREALTIME, U6RATE, UNEMPLOY, UNRATE</td><td class=small>月次系列で2025-09と2025-11は存在し2025-10のみ無いものを列挙</td></tr>
+<tr><td><span class='pill ok'>PASS</span></td><td>サーム・ルールの再計算</td><td class=small>再計算 0.00pt / FRED実時間値 0.0pt</td><td class=small>Sahm (2019):失業率3か月平均−過去12か月の最小値</td></tr>
+</tbody></table></div>
+<h3>限界</h3>
+<ul>
+  <li>この環境から到達できる公的サイトはFREDのみで、BLS・BEA・Census・ALFREDの原文には到達できない。そのため<b>初回公表値と改定幅は検証できない</b>。本号の数値は取得時点の最新改定後の値。</li>
+  <li>2025年10月の家計調査とCPIは欠測。この月をまたぐ前年比は計算せず、13か月年率などで代替した。</li>
+  <li>民間予想(コンセンサス)は一次情報で確認できないため、予想との比較(サプライズ)は扱わない。代わりに過去の分布での位置(z値、パーセンタイル)で強弱を示した。</li>
+  <li>政策ルールと景気後退確率は、公表されている係数を使った本研究所の計算で、公式推計ではない。</li>
+</ul>
+</div></section>
+
+<section id="refs"><div class="no">08</div><div class="body">
+<h2>参照した学術研究</h2>
+<ol class="ref">
+<li>Benigno, P. &amp; Eggertsson, G. (2023). "It's Baaack: The Surge in Inflation in the 2020s and the Return of the Non-Linear Phillips Curve." NBER Working Paper 31197.</li>
+<li>Bryan, M. &amp; Cecchetti, S. (1994). "Measuring Core Inflation." In N. G. Mankiw (ed.), <i>Monetary Policy</i>, NBER / University of Chicago Press.</li>
+<li>Bryan, M. &amp; Meyer, B. (2010). "Are Some Prices in the CPI More Forward Looking Than Others? We Think So." Federal Reserve Bank of Atlanta, <i>Economic Commentary</i>.</li>
+<li>Coibion, O. &amp; Gorodnichenko, Y. (2015). "Is the Phillips Curve Alive and Well after All? Inflation Expectations and the Missing Disinflation." <i>American Economic Journal: Macroeconomics</i> 7(1).</li>
+<li>Dolmas, J. (2005). "Trimmed Mean PCE Inflation." Federal Reserve Bank of Dallas Working Paper 0506.</li>
+<li>Estrella, A. &amp; Mishkin, F. (1998). "Predicting U.S. Recessions: Financial Variables as Leading Indicators." <i>Review of Economics and Statistics</i> 80(1).</li>
+<li>Gilchrist, S. &amp; Zakrajšek, E. (2012). "Credit Spreads and Business Cycle Fluctuations." <i>American Economic Review</i> 102(4).</li>
+<li>Gürkaynak, R., Sack, B. &amp; Swanson, E. (2005). "The Sensitivity of Long-Term Interest Rates to Economic News." <i>American Economic Review</i> 95(1).</li>
+<li>Hamilton, J. (2003). "What Is an Oil Shock?" <i>Journal of Econometrics</i> 113(2).</li>
+<li>Okun, A. (1962). "Potential GNP: Its Measurement and Significance." <i>Proceedings of the Business and Economic Statistics Section</i>, American Statistical Association.</li>
+<li>Sahm, C. (2019). "Direct Stimulus Payments to Individuals." In <i>Recession Ready</i>, The Hamilton Project / Washington Center for Equitable Growth.</li>
+<li>Taylor, J. (1993). "Discretion versus Policy Rules in Practice." <i>Carnegie-Rochester Conference Series on Public Policy</i> 39.</li>
+<li>Yellen, J. (2012). "Perspectives on Monetary Policy." Speech at the Boston Economic Club, June 6, 2012.</li>
+</ol>
+</div></section>
+</div>
+
+<script id="chartdata" type="application/json">{"infl":{"type":"line","unit":"%","series":[{"name":"CPI総合 前年比","data":[["2023-01-01",6.327178517960097],["2023-02-01",5.957820738137087],["2023-03-01",4.917719362889961],["2023-04-01",4.950079879124369],["2023-05-01",4.131851231385042],["2023-06-01",3.070617072997095],["2023-07-01",3.287749268428297],["2023-08-01",3.722504803505289],["2023-09-01",3.687206638119256],["2023-10-01",3.2512659098611785],["2023-11-01",3.1333462745911866],["2023-12-01",3.3159099427102934],["2024-01-01",3.0883429864855705],["2024-02-01",3.157074141648697],["2024-03-01",3.4868349120836584],["2024-04-01",3.3607951262196734],["2024-05-01",3.244278584003113],["2024-06-01",2.9702579486470926],["2024-07-01",2.9414757935583014],["2024-08-01",2.607144490692037],["2024-09-01",2.4264830315416708],["2024-10-01",2.578844053871343],["2024-11-01",2.719472461284833],["2024-12-01",2.870690967509981],["2025-01-01",2.9909783078999608],["2025-02-01",2.8015834477613355],["2025-03-01",2.381981462805549],["2025-04-01",2.32538823025783],["2025-05-01",2.3772651073680873],["2025-06-01",2.680453865910226],["2025-07-01",2.742618052167134],["2025-08-01",2.9385917430316155],["2025-09-01",3.0225715847133294],["2025-11-01",2.6964439164939513],["2025-12-01",2.653304114557753],["2026-01-01",2.391201432150014],["2026-02-01",2.4340041103732224],["2026-03-01",3.2859577528651984],["2026-04-01",3.7792458367415627],["2026-05-01",4.166614684049641],["2026-06-01",3.463530729385411],["2026-07-01",3.303856050706311],["2026-08-01",3.353016322755642],["2026-09-01",3.7172508442689933]]},{"name":"コアCPI 前年比","data":[["2023-01-01",5.539533472591773],["2023-02-01",5.498260329618088],["2023-03-01",5.566741392671326],["2023-04-01",5.514364195873522],["2023-05-01",5.337547036084689],["2023-06-01",4.853596327155252],["2023-07-01",4.700970557935236],["2023-08-01",4.399143440066089],["2023-09-01",4.128747996485882],["2023-10-01",4.027401561127464],["2023-11-01",4.017980521102138],["2023-12-01",3.9154727698627045],["2024-01-01",3.8583540949372663],["2024-02-01",3.7619647313751337],["2024-03-01",3.8161935067360986],["2024-04-01",3.6260251717590952],["2024-05-01",3.394419668976645],["2024-06-01",3.2654173234475614],["2024-07-01",3.2301916105644812],["2024-08-01",3.2850959364300047],["2024-09-01",3.2823574494668994],["2024-10-01",3.298689706765301],["2024-11-01",3.2859356193500444],["2024-12-01",3.2133335461932644],["2025-01-01",3.282970485398584],["2025-02-01",3.13755688228059],["2025-03-01",2.808783050077035],["2025-04-01",2.7760200724699313],["2025-05-01",2.7658403935930886],["2025-06-01",2.910895442696071],["2025-07-01",3.0544930080893096],["2025-08-01",3.111806098514469],["2025-09-01",3.0199668258857892],["2025-11-01",2.5990448060944082],["2025-12-01",2.6464847073089937],["2026-01-01",2.512028782828879],["2026-02-01",2.4724624767640258],["2026-03-01",2.602167705486824],["2026-04-01",2.7433094309685213],["2026-05-01",2.8229420636110225],["2026-06-01",2.5657850563697515],["2026-07-01",2.4665177892309265],["2026-08-01",2.4461631786472537],["2026-09-01",2.565840844021827]]},{"name":"コアPCE 前年比","data":[["2023-01-01",5.001699128972836],["2023-02-01",4.861964009184616],["2023-03-01",4.864946324252917],["2023-04-01",4.853416741769601],["2023-05-01",4.833980505586832],["2023-06-01",4.442869269206207],["2023-07-01",4.236075982487053],["2023-08-01",3.8300013883104223],["2023-09-01",3.738107788156597],["2023-10-01",3.558948582445387],["2023-11-01",3.4371781668383283],["2023-12-01",3.225199490262831],["2024-01-01",3.224460247838845],["2024-02-01",3.178442605559084],["2024-03-01",3.1455260154698017],["2024-04-01",3.017586436450337],["2024-05-01",2.809484213974356],["2024-06-01",2.7792207792207924],["2024-07-01",2.8088524452997587],["2024-08-01",2.9023415954939846],["2024-09-01",2.8395791858595754],["2024-10-01",2.904729847657528],["2024-11-01",2.8740925119269845],["2024-12-01",2.9032097701625625],["2025-01-01",2.8118579879703898],["2025-02-01",2.8230649008801567],["2025-03-01",2.5635982166273275],["2025-04-01",2.676438831266559],["2025-05-01",2.787445059882687],["2025-06-01",2.8255358001744613],["2025-07-01",2.841168044794573],["2025-08-01",2.8513420229828945],["2025-09-01",2.8170611200207363],["2025-10-01",2.704820055566337],["2025-11-01",2.7212091395204308],["2025-12-01",2.8720269247491936],["2026-01-01",2.9379900328226904],["2026-02-01",2.9591526535575507],["2026-03-01",3.1052227833535673],["2026-04-01",3.0838724068704026],["2026-05-01",3.161709771256893],["2026-06-01",3.041234252733216],["2026-07-01",2.9953388254473134],["2026-08-01",3.034442461664799],["2026-09-01",3.1211596029620203]]}],"ref":2.0,"refLabel":"物価目標 2%"},"oil":{"type":"line","unit":"ドル","series":[{"name":"WTI原油(ドル/バレル)","data":[["2026-09-01",91.48],["2026-09-02",92.15],["2026-09-03",92.55],["2026-09-04",92.69],["2026-09-08",94.21],["2026-09-09",97.26],["2026-09-10",103.57],["2026-09-11",101.27],["2026-09-14",102.42],["2026-09-15",107.02],["2026-09-16",103.62],["2026-09-17",103.21],["2026-09-18",101.44],["2026-09-21",96.97],["2026-09-22",96.41],["2026-09-23",93.38],["2026-09-24",95.88],["2026-09-25",85.23],["2026-09-28",99.37],["2026-09-29",96.16],["2026-09-30",97.18],["2026-10-01",99.77],["2026-10-02",97.89],["2026-10-05",96.13],["2026-10-06",96.24],["2026-10-07",95.02],["2026-10-08",98.26],["2026-10-09",98.73],["2026-10-12",94.99],["2026-10-13",95.39],["2026-10-14",96.34],["2026-10-15",104.71],["2026-10-16",108.21],["2026-10-19",110.01],["2026-10-20",107.89],["2026-10-21",103.95],["2026-10-22",104.27],["2026-10-23",109.72],["2026-10-26",105.25],["2026-10-27",103.37],["2026-10-28",106.25],["2026-10-29",105.51],["2026-10-30",107.56],["2026-11-02",100.06],["2026-11-03",99.64],["2026-11-04",91.73],["2026-11-05",94.05],["2026-11-06",94.37],["2026-11-09",90.4],["2026-11-10",89.62],["2026-11-11",89.62],["2026-11-12",92.3],["2026-11-13",91.96],["2026-11-16",89.24],["2026-11-17",89.53]]}],"start":"2026-01-01"},"pay":{"type":"bar","unit":"千人","series":[{"name":"非農業部門雇用者数 前月差(千人)","data":[["2024-11-01",134.0],["2024-12-01",237.0],["2025-01-01",-48.0],["2025-02-01",42.0],["2025-03-01",67.0],["2025-04-01",108.0],["2025-05-01",13.0],["2025-06-01",-20.0],["2025-07-01",64.0],["2025-08-01",-70.0],["2025-09-01",76.0],["2025-10-01",-140.0],["2025-11-01",41.0],["2025-12-01",-17.0],["2026-01-01",160.0],["2026-02-01",-156.0],["2026-03-01",214.0],["2026-04-01",148.0],["2026-05-01",63.0],["2026-06-01",31.0],["2026-07-01",-10.0],["2026-08-01",186.0],["2026-09-01",60.0],["2026-10-01",165.0]]}]},"yld":{"type":"line","unit":"%","series":[{"name":"2年国債","data":[["2026-09-01",4.39],["2026-09-02",4.39],["2026-09-03",4.34],["2026-09-04",4.37],["2026-09-08",4.39],["2026-09-09",4.43],["2026-09-10",4.56],["2026-09-11",4.63],["2026-09-14",4.65],["2026-09-15",4.67],["2026-09-16",4.74],["2026-09-17",4.67],["2026-09-18",4.76],["2026-09-21",4.76],["2026-09-22",4.71],["2026-09-23",4.85],["2026-09-24",4.87],["2026-09-25",4.81],["2026-09-28",4.92],["2026-09-29",4.89],["2026-09-30",4.88],["2026-10-01",4.78],["2026-10-02",4.83],["2026-10-05",4.84],["2026-10-06",4.79],["2026-10-07",4.77],["2026-10-08",4.75],["2026-10-09",4.8],["2026-10-13",4.79],["2026-10-14",4.82],["2026-10-15",4.77],["2026-10-16",4.74],["2026-10-19",4.77],["2026-10-20",4.79],["2026-10-21",4.81],["2026-10-22",4.65],["2026-10-23",4.69],["2026-10-26",4.68],["2026-10-27",4.7],["2026-10-28",4.67],["2026-10-29",4.61],["2026-10-30",4.56],["2026-11-02",4.59],["2026-11-03",4.61],["2026-11-04",4.58],["2026-11-05",4.46],["2026-11-06",4.51],["2026-11-09",4.56],["2026-11-10",4.73],["2026-11-12",4.86],["2026-11-13",4.88],["2026-11-16",4.83],["2026-11-17",4.8],["2026-11-18",4.8],["2026-11-19",4.76],["2026-11-20",4.63]]},{"name":"10年国債","data":[["2026-09-01",4.79],["2026-09-02",4.79],["2026-09-03",4.77],["2026-09-04",4.78],["2026-09-08",4.8],["2026-09-09",4.83],["2026-09-10",4.95],["2026-09-11",4.96],["2026-09-14",4.97],["2026-09-15",5.0],["2026-09-16",5.01],["2026-09-17",4.94],["2026-09-18",5.01],["2026-09-21",4.96],["2026-09-22",4.96],["2026-09-23",5.11],["2026-09-24",5.18],["2026-09-25",5.17],["2026-09-28",5.24],["2026-09-29",5.26],["2026-09-30",5.29],["2026-10-01",5.24],["2026-10-02",5.28],["2026-10-05",5.31],["2026-10-06",5.27],["2026-10-07",5.28],["2026-10-08",5.22],["2026-10-09",5.24],["2026-10-13",5.21],["2026-10-14",5.19],["2026-10-15",5.1],["2026-10-16",5.09],["2026-10-19",5.15],["2026-10-20",5.12],["2026-10-21",5.13],["2026-10-22",4.96],["2026-10-23",5.0],["2026-10-26",5.0],["2026-10-27",4.99],["2026-10-28",5.05],["2026-10-29",4.98],["2026-10-30",4.94],["2026-11-02",4.91],["2026-11-03",4.95],["2026-11-04",4.9],["2026-11-05",4.84],["2026-11-06",4.86],["2026-11-09",4.88],["2026-11-10",4.98],["2026-11-12",5.1],["2026-11-13",5.15],["2026-11-16",5.12],["2026-11-17",5.1],["2026-11-18",5.07],["2026-11-19",5.04],["2026-11-20",4.92]]}],"start":"2026-10-01","marks":[["2026-10-29","GDP速報・個人所得支出"],["2026-10-30","雇用コスト指数"],["2026-11-06","雇用統計"],["2026-11-10","CPI"],["2026-11-13","PPI"],["2026-11-17","小売売上高・鉱工業生産・輸入物価"],["2026-11-18","住宅着工"]]},"spx":{"type":"line","unit":"","series":[{"name":"S&P500","data":[["2026-09-01",7631.47],["2026-09-02",7666.6],["2026-09-03",7747.71],["2026-09-04",7718.6],["2026-09-08",7673.52],["2026-09-09",7636.36],["2026-09-10",7591.7],["2026-09-11",7656.98],["2026-09-14",7619.98],["2026-09-15",7585.73],["2026-09-16",7551.81],["2026-09-17",7637.76],["2026-09-18",7650.5],["2026-09-21",7764.7],["2026-09-22",7764.64],["2026-09-23",7706.03],["2026-09-24",7704.13],["2026-09-25",7743.41],["2026-09-28",7683.69],["2026-09-29",7670.84],["2026-09-30",7651.54],["2026-10-01",7666.45],["2026-10-02",7722.72],["2026-10-05",7773.95],["2026-10-06",7818.93],["2026-10-07",7801.77],["2026-10-08",7765.36],["2026-10-09",7811.54],["2026-10-12",7807.24],["2026-10-13",7805.45],["2026-10-14",7718.94],["2026-10-15",7744.06],["2026-10-16",7659.44],["2026-10-19",7690.73],["2026-10-20",7712.57],["2026-10-21",7757.17],["2026-10-22",7663.43],["2026-10-23",7623.68],["2026-10-26",7676.77],["2026-10-27",7722.6],["2026-10-28",7743.98],["2026-10-29",7720.39],["2026-10-30",7580.07],["2026-11-02",7541.4],["2026-11-03",7568.92],["2026-11-04",7688.62],["2026-11-05",7353.73],["2026-11-06",7376.86],["2026-11-09",7549.94],["2026-11-10",7520.93],["2026-11-11",7619.38],["2026-11-12",7592.4],["2026-11-13",7561.67],["2026-11-16",7416.59],["2026-11-17",7340.53],["2026-11-18",7323.63],["2026-11-19",7175.83],["2026-11-20",6910.39]]}],"start":"2026-10-01"},"vu":{"type":"line","unit":"","series":[{"name":"求人件数 ÷ 失業者数(V/U)","data":[["2023-10-01",1.3275568621383258],["2023-11-01",1.3816254416961131],["2023-12-01",1.3461842313161636],["2024-01-01",1.3567611336032388],["2024-02-01",1.3012642614862782],["2024-03-01",1.2583959515411747],["2024-04-01",1.1608078939253776],["2024-05-01",1.1742870076957899],["2024-06-01",1.0777503269873565],["2024-07-01",1.046210200056354],["2024-08-01",1.0647033838312332],["2024-09-01",1.0137246313330412],["2024-10-01",1.0615738742626961],["2024-11-01",1.0672873465933135],["2024-12-01",1.0541907514450868],["2025-01-01",1.0824471959213402],["2025-02-01",1.0194256756756757],["2025-03-01",0.9747616376892877],["2025-04-01",0.9920335429769392],["2025-05-01",1.0085540838852096],["2025-06-01",1.0212645307626877],["2025-07-01",0.9748349834983498],["2025-08-01",0.9375338753387534],["2025-09-01",0.9426692965154504],["2025-11-01",0.8798354967227863],["2025-12-01",0.8729841396774624],["2026-01-01",0.9826275787187839],["2026-02-01",0.9142781666886804],["2026-03-01",0.9513744992402265],["2026-04-01",1.0287535602875355],["2026-05-01",1.031476666210483],["2026-06-01",1.0124048491683113],["2026-07-01",1.0605841526894157],["2026-08-01",1.0226141373915516],["2026-09-01",1.058236038824026]]}],"ref":1.0,"refLabel":"V/U = 1"},"gdp":{"type":"hbar","unit":"%pt","series":[{"name":"7-9月期 実質GDP成長率への寄与度(%pt)","data":[["個人消費",2.52],["固定投資",1.66],["在庫",1.61],["政府",0.9],["純輸出",-3.32]]}]}}</script>
+<script>
+(function(){
+const D=JSON.parse(document.getElementById('chartdata').textContent);
+const NS='http://www.w3.org/2000/svg', COL=['var(--s1)','var(--s2)','var(--s3)'];
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const fmt=(v,u)=>(Math.abs(v)>=1000?v.toLocaleString('en-US',{maximumFractionDigits:0}):v.toFixed(2))+(u==='%'?'%':u==='%pt'?'pt':'');
+function nice(lo,hi,n){const st=Math.pow(10,Math.floor(Math.log10((hi-lo)/n)));const c=[1,2,2.5,5,10].map(m=>m*st).find(s=>(hi-lo)/s<=n)||st*10;
+  const out=[];for(let v=Math.ceil(lo/c)*c;v<=hi+1e-9;v+=c)out.push(+v.toFixed(6));return out}
+function draw(box){
+  const c=D[box.dataset.chart]; box.innerHTML='';
+  const W=Math.max(280,box.clientWidth), H=c.type==='hbar'?190:Math.round(Math.min(300,Math.max(200,W*.42)));
+  if(c.series.length>1||c.ref){const lg=document.createElement('div');lg.className='legend';
+    c.series.forEach((s,i)=>{lg.insertAdjacentHTML('beforeend',`<span><i style="background:${COL[i]}"></i>${s.name}</span>`)});
+    if(c.ref)lg.insertAdjacentHTML('beforeend',`<span><i style="background:var(--axis);height:1px"></i>${c.refLabel}</span>`);box.appendChild(lg)}
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':c.series.map(s=>s.name).join('、')},box);
+  const tip=document.createElement('div');tip.className='tip';tip.hidden=true;box.appendChild(tip);
+  if(c.type==='hbar'){
+    const d=c.series[0].data, L=78,R=W-16, T=6, rh=(H-T-24)/d.length;
+    const lo=Math.min(0,...d.map(x=>x[1])), hi=Math.max(0,...d.map(x=>x[1]));
+    const ticks=nice(lo,hi,5), x0=Math.min(lo,ticks[0]), x1=Math.max(hi,ticks[ticks.length-1]);
+    const X=v=>L+(v-x0)/(x1-x0)*(R-L);
+    ticks.forEach(t=>{el('line',{x1:X(t),x2:X(t),y1:T,y2:H-20,stroke:'var(--grid)'},svg);el('text',{x:X(t),y:H-6,'text-anchor':'middle'},svg).textContent=t});
+    el('line',{x1:X(0),x2:X(0),y1:T,y2:H-20,stroke:'var(--axis)'},svg);
+    d.forEach((r,i)=>{const y=T+i*rh+rh*.2, h=rh*.6, a=X(Math.min(0,r[1])), b=X(Math.max(0,r[1]));
+      el('text',{x:L-8,y:y+h/2+4,'text-anchor':'end',style:'fill:var(--ink);font-family:var(--f-body);font-size:12px'},svg).textContent=r[0];
+      const rc=el('rect',{x:a,y,width:Math.max(1,b-a),height:h,rx:3,fill:r[1]<0?'var(--s2)':'var(--s1)'},svg);
+      el('text',{x:r[1]<0?a-5:b+5,y:y+h/2+4,'text-anchor':r[1]<0?'end':'start',style:'fill:var(--ink)'},svg).textContent=(r[1]>0?'+':'')+r[1].toFixed(2);
+    });return}
+  const series=c.series.map(s=>({...s,data:s.data.filter(p=>!c.start||p[0]>=c.start)}));
+  const all=series.flatMap(s=>s.data), xs=[...new Set(all.map(p=>p[0]))].sort();
+  const ys=all.map(p=>p[1]).concat(c.ref!=null?[c.ref]:[]).concat(c.type==='bar'?[0]:[]);
+  let lo=Math.min(...ys), hi=Math.max(...ys); const pad=(hi-lo)*.08||1; lo-=pad; hi+=pad;
+  const ticks=nice(lo,hi,5); lo=Math.min(lo,ticks[0]); hi=Math.max(hi,ticks[ticks.length-1]);
+  const L=52,R=W-12,T=10,B=H-26, t0=new Date(xs[0]), t1=new Date(xs[xs.length-1]);
+  const X=c.type==='bar'?(d=>L+(xs.indexOf(d)+.5)/xs.length*(R-L)):(d=>L+(new Date(d)-t0)/(t1-t0||1)*(R-L));
+  const Y=v=>B-(v-lo)/(hi-lo)*(B-T);
+  ticks.forEach(t=>{el('line',{x1:L,x2:R,y1:Y(t),y2:Y(t),stroke:'var(--grid)'},svg);
+    el('text',{x:L-6,y:Y(t)+4,'text-anchor':'end'},svg).textContent=Math.abs(t)>=1000?t.toLocaleString('en-US'):t});
+  const nx=Math.max(2,Math.floor((R-L)/90)), step=Math.ceil(xs.length/nx);
+  xs.forEach((d,i)=>{if(i%step===0)el('text',{x:X(d),y:H-8,'text-anchor':'middle'},svg).textContent=d.slice(2,7).replace('-','/')+(xs.length<80&&c.type!=='bar'?'/'+d.slice(8):'')});
+  if(c.ref!=null){el('line',{x1:L,x2:R,y1:Y(c.ref),y2:Y(c.ref),stroke:'var(--axis)','stroke-dasharray':'4 3'},svg)}
+  (c.marks||[]).forEach(m=>{if(m[0]>=xs[0]&&m[0]<=xs[xs.length-1])el('line',{x1:X(m[0]),x2:X(m[0]),y1:T,y2:B,stroke:'var(--axis)','stroke-dasharray':'1 3'},svg)});
+  if(c.type==='bar'){const bw=Math.max(2,(R-L)/xs.length-3);
+    series[0].data.forEach(p=>{const y0=Y(0),y1=Y(p[1]);el('rect',{x:X(p[0])-bw/2,y:Math.min(y0,y1),width:bw,height:Math.max(1,Math.abs(y1-y0)),rx:2,fill:p[1]<0?'var(--s2)':'var(--s1)'},svg)});
+    el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),stroke:'var(--axis)'},svg)}
+  else series.forEach((s,i)=>{el('path',{d:s.data.map((p,j)=>(j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(''),fill:'none',stroke:COL[i],'stroke-width':2,'stroke-linejoin':'round'},svg);
+    const lp=s.data[s.data.length-1];el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:3.5,fill:COL[i],stroke:'var(--paper)','stroke-width':2},svg)});
+  const cross=el('line',{y1:T,y2:B,stroke:'var(--axis)',visibility:'hidden'},svg);
+  const hit=el('rect',{x:L,y:T,width:R-L,height:B-T,fill:'transparent'},svg);
+  const move=e=>{const r=svg.getBoundingClientRect(), px=(e.clientX-r.left)*W/r.width;
+    let best=xs[0],bd=1e9;xs.forEach(d=>{const dd=Math.abs(X(d)-px);if(dd<bd){bd=dd;best=d}});
+    cross.setAttribute('x1',X(best));cross.setAttribute('x2',X(best));cross.setAttribute('visibility','visible');
+    const mk=(c.marks||[]).find(m=>m[0]===best);
+    tip.innerHTML=best+(mk?' · '+mk[1]:'')+'<br>'+series.map((s,i)=>{const p=s.data.find(q=>q[0]===best);return p?`<span style="color:${COL[i]}">■</span> ${s.name}: ${fmt(p[1],c.unit)}`:''}).filter(Boolean).join('<br>');
+    tip.hidden=false;const bx=box.getBoundingClientRect(), tx=e.clientX-bx.left;
+    tip.style.left=Math.min(Math.max(0,tx+12),bx.width-tip.offsetWidth)+'px';tip.style.top=(e.clientY-bx.top+12)+'px'};
+  hit.addEventListener('pointermove',move);hit.addEventListener('pointerdown',move);
+  hit.addEventListener('pointerleave',()=>{tip.hidden=true;cross.setAttribute('visibility','hidden')});
+}
+const boxes=[...document.querySelectorAll('.chart')];
+const run=()=>boxes.forEach(draw); run();
+let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(run,150)});
+})();
+</script>

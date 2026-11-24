@@ -1,0 +1,336 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>経済指標月報 2026年11月</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600;700&display=swap">
+<style>
+/* Layout: 研究所の月報。左に細い章番号の柱、本文は65字幅、表とグラフは本文より広く使う */
+:root{
+  --bg:#f3f5f7; --paper:#ffffff; --ink:#15202c; --muted:#5b6776; --rule:#d8dee6; --accent:#1f4c97;
+  --hot:#a8322a; --cool:#1b7a4b; --chip:#e8edf4;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --grid:rgba(21,32,44,.08); --axis:rgba(21,32,44,.35);
+  --f-display:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1319; --paper:#151c24; --ink:#e4e9ef; --muted:#9ba7b5; --rule:#2a3441; --accent:#86aef0;
+  --hot:#ef8a7f; --cool:#5fcf98; --chip:#1f2833;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --grid:rgba(228,233,239,.08); --axis:rgba(228,233,239,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1319; --paper:#151c24; --ink:#e4e9ef; --muted:#9ba7b5; --rule:#2a3441; --accent:#86aef0;
+  --hot:#ef8a7f; --cool:#5fcf98; --chip:#1f2833;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --grid:rgba(228,233,239,.08); --axis:rgba(228,233,239,.35); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.85;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1000px;margin:0 auto}
+header.mast{padding-block:40px 28px;border-bottom:2px solid var(--ink);display:grid;gap:10px}
+.inst{font-family:var(--f-data);font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.25;margin:0;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section{padding-block:34px 8px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 20px}
+.no{font-family:var(--f-data);color:var(--accent);font-size:13px;padding-top:6px;letter-spacing:.06em}
+.body{min-width:0}
+h2{font-family:var(--f-display);font-size:24px;font-weight:700;margin:0 0 6px;text-wrap:balance}
+h3{font-size:16px;font-weight:700;margin:26px 0 4px}
+p{margin:8px 0;max-width:68ch}
+.lead{font-size:16.5px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;padding:0 7px;border-radius:3px;margin-right:6px;vertical-align:2px;font-weight:500}
+.tag.f{background:var(--chip);color:var(--ink)}
+.tag.i{border:1px solid var(--accent);color:var(--accent)}
+.src{font-size:12px;color:var(--muted)}
+.num,td.num{font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hot{color:var(--hot)} .cool{color:var(--cool)}
+ul.find{padding-left:0;list-style:none;display:grid;gap:12px;margin:14px 0}
+ul.find li{padding-left:16px;border-left:2px solid var(--rule);max-width:72ch}
+ul.find b{font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:18px 0 6px}
+.tile{background:var(--paper);padding:12px 14px;display:grid;gap:2px;align-content:start}
+.tile .k{font-size:12px;color:var(--muted)}
+.tile .v{font-family:var(--f-data);font-size:24px;font-weight:500;line-height:1.3}
+.tile .d{font-size:12px;color:var(--muted)}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--rule);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;background:var(--bg);white-space:nowrap}
+tbody th{font-weight:500;white-space:nowrap}
+td.num{text-align:right}
+td.small{font-size:12px;color:var(--muted)}
+.pill{font-family:var(--f-data);font-size:11px;padding:1px 7px;border-radius:10px}
+.pill.ok{background:color-mix(in srgb,var(--cool) 18%,transparent);color:var(--cool)}
+.pill.ng{background:color-mix(in srgb,var(--hot) 18%,transparent);color:var(--hot)}
+figure{margin:16px 0;background:var(--paper);border:1px solid var(--rule);padding:12px 12px 8px}
+figcaption{font-size:13px;font-weight:500;margin-bottom:4px}
+figcaption .src{font-weight:400;display:block}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--f-data);font-size:11px;fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:2px 0 6px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.tip{position:absolute;pointer-events:none;background:var(--paper);border:1px solid var(--rule);box-shadow:0 4px 14px rgba(0,0,0,.12);
+  padding:6px 9px;font-size:12px;font-family:var(--f-data);white-space:nowrap;border-radius:4px;z-index:2}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.two figure{margin:0}
+.note{font-size:13px;color:var(--muted);border-left:2px solid var(--accent);padding:4px 0 4px 12px;margin:14px 0;max-width:72ch}
+ol.ref{font-size:13px;padding-left:20px;max-width:80ch}
+ol.ref li{margin:4px 0}
+.cal{display:grid;gap:6px;margin:10px 0}
+.cal div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:14px}
+.cal div span:first-child{font-family:var(--f-data);color:var(--accent)}
+a{color:var(--accent)}
+@media (max-width:640px){section{grid-template-columns:1fr}.no{padding-top:0}body{font-size:15px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="inst">Personal Economic Research Office · Monthly Bulletin No.1</div>
+  <h1>米国経済指標 月報<br>2026年11月</h1>
+  <div class="meta">
+    <span>対象 <b>2026年10月24日〜11月23日に公表された統計</b></span>
+    <span>データ取得 <b>{{GEN}} UTC</b></span>
+    <span>一次情報 <b>FRED 収録の公表機関データ</b></span>
+    <span>検証 <b>{{NVER}}項目すべてPASS</b></span>
+  </div>
+</header>
+
+<section id="summary"><div class="no">要旨</div><div class="body">
+<h2>景気は強く、物価はエネルギー主導で高止まり。月末に市場が急変</h2>
+<p class="lead">本号は、過去1か月に公表された米国の主要統計を、公表機関の一次データだけで検証し直したものです。民間予想(コンセンサス)は一次情報で確かめられないため使っていません。各段落は「事実」と、学術研究の枠組みを当てはめた「解釈」に分けて書いています。</p>
+<div class="tiles">
+  <div class="tile"><span class="k">実質GDP 7-9月期</span><span class="v">{{gdp}}%</span><span class="d">前期比年率</span></div>
+  <div class="tile"><span class="k">雇用者数 10月</span><span class="v">{{pay}}</span><span class="d">千人・3か月平均 {{pay3}}</span></div>
+  <div class="tile"><span class="k">失業率 10月</span><span class="v">{{ur}}%</span><span class="d">前月 {{ur_prev}}%</span></div>
+  <div class="tile"><span class="k">コアCPI 10月</span><span class="v">{{core_mom}}%</span><span class="d">前月比・3か月年率 {{core_ann3}}%</span></div>
+  <div class="tile"><span class="k">コアPCE 9月</span><span class="v">{{cpce_yoy}}%</span><span class="d">前年比</span></div>
+  <div class="tile"><span class="k">実効FF金利</span><span class="v">{{dff}}%</span><span class="d">目標 {{lo}}〜{{up}}%</span></div>
+</div>
+<ul class="find">
+  <li><b>成長は堅調。</b>7-9月期の実質GDPは年率{{gdp}}%。純輸出が{{c_nx}}%pt押し下げた一方、機械設備投資が年率{{equip}}%と急伸し、消費と固定投資を合わせた民間最終需要の寄与は{{pdfp}}%ptに達した。</li>
+  <li><b>物価は目標を上回ったまま。</b>10月のコアCPIは前月比{{core_mom}}%(3か月年率{{core_ann3}}%)。9月のコアPCEは前年比{{cpce_yoy}}%。2025年10月のCPIが未公表のため、10月分の前年比は算出できない。</li>
+  <li><b>原油は下落に転じた。</b>WTIは期間中に{{wti0}}→{{wti1}}ドル({{wti}}%)。10年BEIは{{bei}}bp動き、総合インフレの先行きには下押し材料となる。</li>
+  <li><b>労働市場は崩れていない。</b>10月の雇用者は{{pay}}千人、失業率{{ur}}%、サーム・ルール指標{{sahm}}pt。ただし実質賃金と実質可処分所得は伸びが止まり、貯蓄率は{{sav}}%まで下がった。</li>
+  <li><b>市場は月末に急変。</b>S&amp;P500は{{spx}}%、VIXは{{vix0}}→{{vix1}}、HYスプレッドは{{hy}}bp拡大。大きく下げた11/5と11/20は主要統計の公表日ではなく、統計だけでは原因を特定できない。</li>
+</ul>
+</div></section>
+
+<section id="releases"><div class="no">01</div><div class="body">
+<h2>期間中に公表された主要統計</h2>
+<p>公表日はFREDの発表カレンダー(release id 別)で確認した米国東部時間の日付です。ミシガン大学消費者信頼感(11/20公表の11月確報)はFREDへの収録が1か月遅れるため、本号では扱いません。</p>
+<div class="tw"><table>
+<thead><tr><th>公表日</th><th>統計</th><th>公表機関</th><th>対象期間</th><th>主な結果</th></tr></thead>
+<tbody>
+{{REL_ROWS}}
+</tbody></table></div>
+</div></section>
+
+<section id="prices"><div class="no">02</div><div class="body">
+<h2>物価:コアは3%前後、総合はエネルギー次第</h2>
+<figure><figcaption>インフレ率の推移(前年比)<span class="src">出所:BLS(CPIAUCSL, CPILFESL)、BEA(PCEPILFE)via FRED。2025年10月を基準にする月は前年比を計算できないため空白。</span></figcaption>
+<div class="chart" data-chart="infl"></div></figure>
+
+<h3>CPI(10月、11/10公表)</h3>
+<p><span class="tag f">事実</span>総合は前月比{{cpi_mom}}%、コアは{{core_mom}}%。コアの3か月年率は{{core_ann3}}%、6か月年率は{{core_ann6}}%。コアの前月比{{core_mom}}%は、2015年以降(2020-21年を除く)の分布で{{core_pct}}パーセンタイル(z={{core_z}})に当たる。エネルギー除くサービスは前月比{{sc_mom}}%(3か月年率{{sc_ann3}}%)、住居費{{sh_mom}}%、コア財{{cg_mom}}%。エネルギーは9月に{{en_mom_prev}}%と急騰したあと10月は{{en_mom}}%。9月時点のエネルギー前年比は{{en_yoy_sep}}%。</p>
+<p><span class="tag f">事実</span>2025年10月のCPIはFRED上で欠測(2025年秋の連邦政府閉鎖により公表されず)。そのため2026年10月の前年比は指数から計算できない。代わりに13か月前(2025年9月)からの年率を見ると、総合{{cpi_ann13}}%、コア{{core_ann13}}%。直近の確定した前年比は9月の総合{{cpi_yoy_sep}}%、コア{{core_yoy_sep}}%。</p>
+<div class="tw"><table>
+<thead><tr><th>系列</th><th>前月比 10月</th><th>前月比 9月</th><th>3か月年率</th><th>6か月年率</th><th>13か月年率</th><th>前年比 9月</th></tr></thead>
+<tbody>
+{{PRICE_ROWS}}
+</tbody></table></div>
+<p class="src">単位:%。PPI(最終需要)は2025年10月も公表されているため、本文では10月の前年比を使う。PCEは9月が最新。</p>
+
+<h3>基調インフレ(中銀研究部門の指標)</h3>
+<p><span class="tag f">事実</span>10月のクリーブランド連銀・中央値CPIは前月比年率{{med}}%、16%刈込平均CPIは{{trim}}%。アトランタ連銀の粘着価格コアCPIは前年比{{sticky}}%。9月のダラス連銀・刈込平均PCEは前年比{{dtrim}}%で、コアPCE({{cpce_yoy}}%)を大きく下回る。</p>
+<p><span class="tag i">解釈</span>中央値・刈込平均は、価格変化の分布の両端を落として基調を測る(Bryan &amp; Cecchetti 1994、Dolmas 2005)。コアPCEが刈込平均を0.9%pt近く上回るのは、一部の品目の大きな値上がりが平均を押し上げている形で、広く全品目に及ぶ過熱よりも、特定分野へのショックに近い姿と読める。一方、10月単月の刈込平均CPIは年率{{trim}}%と高く、1か月だけでは判断しにくい。</p>
+
+<h3>生産者物価と輸入物価</h3>
+<p><span class="tag f">事実</span>PPI最終需要は10月に前月比{{ppi_mom}}%(9月{{ppi_mom_prev}}%)、前年比{{ppi_yoy}}%。食品・エネルギーを除くPPIも前年比{{ppic_yoy}}%。輸入物価は前月比{{ir_mom}}%、3か月年率{{ir_ann3}}%、9月の前年比{{ir_yoy_sep}}%。</p>
+<p><span class="tag i">解釈</span>川上の価格(PPI・輸入物価)の伸びが消費者物価を大きく上回っており、企業がコストをまだ価格に転嫁しきっていない可能性がある。消費財価格への波及は今後数か月のコア財CPIで確認する。</p>
+
+<h3>PCE物価(9月、10/29公表)</h3>
+<p><span class="tag f">事実</span>PCE総合は前年比{{pce_yoy}}%、コアは{{cpce_yoy}}%。コアの前月比{{cpce_mom}}%はz={{cpce_z}}、3か月年率{{cpce_ann3}}%。</p>
+
+<h3>期待インフレ</h3>
+<p><span class="tag f">事実</span>ミシガン大学の1年先期待インフレは10月{{mich}}%。市場の10年BEIは期間中に{{bei0}}%→{{bei1}}%、5年先5年は{{fwd}}%。</p>
+<p><span class="tag i">解釈</span>家計の期待はガソリン価格に強く反応することが知られている(Coibion &amp; Gorodnichenko 2015)。市場の長期期待は2%台前半で安定しており、家計の期待だけが高い状態。ガソリン小売価格は9月下旬の高値から下がっており、家計の期待が今後下がるかが確認点になる。</p>
+
+<div class="note"><b>12月公表の11月CPIに注意(機械的な上振れ要因)。</b>2025年9月→11月のコアCPIの2か月変化は{{be_core}}%で、2025年1〜9月の平均的な2か月変化({{be_core_avg}}%)を{{be_gap}}%pt下回る。住居費も{{be_sh}}%(平均{{be_sh_avg}}%)。前年の11月の水準が低いぶん、2026年11月の前年比は実勢より高めに出やすい。BLSの欠測処理の詳細は公表資料での確認が必要。</div>
+</div></section>
+
+<section id="labor"><div class="no">03</div><div class="body">
+<h2>労働:雇用は回復、需給はほぼ均衡</h2>
+<div class="two">
+<figure><figcaption>非農業部門雇用者数(前月差、千人)<span class="src">出所:BLS(PAYEMS)via FRED。現行ヴィンテージ。</span></figcaption><div class="chart" data-chart="pay"></div></figure>
+<figure><figcaption>求人件数 ÷ 失業者数(V/U)<span class="src">出所:BLS JOLTS(JTSJOL)・CPS(UNEMPLOY)より計算</span></figcaption><div class="chart" data-chart="vu"></div></figure>
+</div>
+<h3>雇用統計(10月、11/6公表)</h3>
+<p><span class="tag f">事実</span>非農業部門雇用者は{{pay}}千人(9月{{pay_prev}}、8月{{pay_prev2}})。3か月平均{{pay3}}千人、6か月平均{{pay6}}千人、12か月平均{{pay12}}千人。民間{{priv}}、製造業{{mfg}}、連邦政府{{fed}}。家計調査の就業者は{{hh}}千人、労働力人口は{{clf}}千人増えた。</p>
+<p><span class="tag f">事実</span>失業率{{ur}}%(失業者÷労働力で再計算すると4.14%)、U-6は{{u6_prev}}%→{{u6}}%に上昇。労働参加率{{lfpr}}%、25-54歳の就業率{{epop}}%。失業者のうち27週以上の長期失業の割合は{{lt_prev}}%→{{lt}}%。</p>
+<p><span class="tag f">事実</span>平均時給は前月比{{ahe_mom}}%、前年比{{ahe_yoy}}%。9月の前年比({{ahe_yoy_sep}}%)からCPI前年比を引いた実質賃金は{{real_wage_sep}}%pt。7-9月期の雇用コスト指数は前年比{{eci_yoy}}%(民間賃金{{eci_wag}}%)。労働生産性は年率{{prod}}%(前年比{{prod_yoy}}%)、単位労働コストは年率{{ulc}}%(前年比{{ulc_yoy}}%)。</p>
+<p><span class="tag i">解釈</span>高い生産性の伸びが賃金の伸びを吸収し、単位労働コストは前年比{{ulc_yoy}}%、直近四半期は年率{{ulc}}%にとどまる。労働コストが物価を押し上げている証拠は弱い。今回のインフレは賃金主導ではなく、エネルギーと川上価格が主因という見方と整合する。U-6の上昇と長期失業の割合の上昇は、雇用の伸びが一部の層に届いていない兆候として注視する。</p>
+<h3>JOLTS(9月)と失業保険</h3>
+<p><span class="tag f">事実</span>求人{{jol}}百万件、V/U={{vu}}。自発的離職率は{{quit_prev}}%→{{quit}}%、採用率{{hire}}%、解雇率{{lay}}%。新規失業保険申請は{{ic}}千件(11/14週)、継続受給者は{{cc0}}百万→{{cc}}百万人。</p>
+<p><span class="tag i">解釈</span>Benigno &amp; Eggertsson(2023)は、V/Uが1を超えると賃金・物価が労働需給に強く反応する(フィリップス曲線が急になる)ことを示した。V/Uは{{vu}}で境目に近く、労働市場は過熱でも悪化でもない。サーム・ルール(Sahm 2019)は{{sahm}}ptで、景気後退のシグナル(0.5pt)から遠い。</p>
+</div></section>
+
+<section id="growth"><div class="no">04</div><div class="body">
+<h2>成長と需要:設備投資が主役、家計の体力に陰り</h2>
+<figure><figcaption>7-9月期 実質GDP成長率 {{gdp}}% の寄与度(%pt)<span class="src">出所:BEA NIPA 表1.1.2 via FRED。寄与度の合計は再計算で3.37%(公表3.4%)。</span></figcaption><div class="chart" data-chart="gdp"></div></figure>
+<h3>GDP速報(7-9月期、10/29公表)</h3>
+<p><span class="tag f">事実</span>実質GDPは前期比年率{{gdp}}%、前年比{{gdp_yoy}}%。寄与度は個人消費{{c_pce}}、固定投資{{c_fix}}、在庫{{c_stk}}、政府{{c_gov}}、純輸出{{c_nx}}(%pt)。非住宅投資は年率{{nres}}%(うち機械設備{{equip}}%、知的財産{{ipp}}%)、住宅投資{{resi}}%。実質輸出{{exp}}%、実質輸入{{imp}}%。実質最終販売は{{fs}}%、GDPデフレーターは{{defl}}%。</p>
+<p><span class="tag i">解釈</span>輸入の急増と設備投資の急増が同時に起きている。GDP統計では、輸入した資本財は投資に加算され、同じ額が輸入として差し引かれる。純輸出の大きなマイナスは、国内需要の弱さではなく、輸入品による設備投資の強さの裏返しと読むのが会計上は自然。品目別の内訳(情報処理機器など)は次の改定値で確認する。アトランタ連銀GDPNowの10-12月期推計は{{gdpnow}}%。</p>
+<h3>家計:所得と消費</h3>
+<p><span class="tag f">事実</span>9月の実質個人消費は前月比{{rpce}}%(8月{{rpce_prev}}%)、実質可処分所得は{{rdpi}}%(前年比{{rdpi_yoy}}%)。貯蓄率は{{sav}}%(1年前{{sav_y1}}%)。10月の小売売上高は名目{{rs}}%(9月{{rs_prev}}%)、物価調整後の実質{{rrs}}%。自動車・ガソリン・建材・外食を除くコントロール・グループ(本研究所で計算)は{{ctl}}%(9月{{ctl_prev}}%)。ミシガン大学消費者信頼感は10月{{umc}}(1年前{{umc_y1}})。</p>
+<p><span class="tag i">解釈</span>実質所得がほぼ伸びない中で、消費は貯蓄の取り崩しで支えられている。エネルギー価格の上昇は家計の実質所得を削る(Hamilton 2003)。原油安が続けば実質所得の下支えになるが、貯蓄率がすでに低く、消費の伸びが鈍る余地は大きい。</p>
+<h3>企業部門・住宅・貿易</h3>
+<p><span class="tag f">事実</span>10月の鉱工業生産は前月比{{ip}}%、うち製造業は{{ipm}}%、設備稼働率{{tcu_prev}}%→{{tcu}}%。9月の耐久財受注は{{dg}}%、コア資本財受注(非国防・航空機除く)は{{core_cap}}%(前年比{{core_cap_yoy}}%)。建設支出は{{cons}}%。住宅着工は年率{{hs_prev}}→{{hs}}千戸、建築許可は{{pm_prev}}→{{pm}}千戸、中古住宅販売は{{ehs_prev}}→{{ehs}}百万戸、30年住宅ローン金利{{mort}}%。9月の貿易赤字は{{tb}}十億ドル(1年前{{tb_y1}})、輸入は前年比{{imp_yoy}}%、輸出は{{exp_yoy}}%。</p>
+<p><span class="tag i">解釈</span>製造業が増えた一方で鉱工業全体が減ったため、10月の減少は製造業以外(公益・鉱業)による。コア資本財受注の前年比2桁増は、GDPの設備投資の強さが10-12月期も続くことを示唆する。住宅は7%台の住宅ローン金利のもとで、許可と中古販売が弱い。</p>
+</div></section>
+
+<section id="policy"><div class="no">05</div><div class="body">
+<h2>金融政策と市場:ルールより緩い政策、月末のリスク回避</h2>
+<h3>政策金利と政策ルール</h3>
+<p><span class="tag f">事実</span>FF金利の誘導目標は{{lo}}〜{{up}}%(2026年9月に0.25%pt引き上げ後、期間中は不変)。実効FF金利{{dff}}%からコアPCE前年比を引いた実質政策金利は{{rff}}%。CBOの自然失業率は{{nrou}}%で、失業率との差は{{ugap}}%pt。</p>
+<div class="tw"><table>
+<thead><tr><th>ルール</th><th>中立金利 r* = 0.5%</th><th>r* = 1.0%</th></tr></thead>
+<tbody>
+<tr><th>Taylor (1993)</th><td class=num>{{t05}}%</td><td class=num>{{t10}}%</td></tr>
+<tr><th>Balanced approach(Yellen 2012)</th><td class=num>{{b05}}%</td><td class=num>{{b10}}%</td></tr>
+<tr><th>実際の実効FF金利</th><td class=num>{{dff}}%</td><td class=num>{{dff}}%</td></tr>
+</tbody></table></div>
+<p class="src">計算:r* + π + 0.5(π − 2) + b × 2(u* − u)。πはコアPCE前年比、u*はCBO自然失業率、失業ギャップはオークン係数2で産出ギャップに換算。b は Taylor 0.5、balanced 1.0。r* は推計の幅が大きいため2通り示す。</p>
+<p><span class="tag i">解釈</span>標準的なルールは{{t05}}〜{{b10}}%を示し、実際の金利はこれより{{gap_lo}}〜{{gap_hi}}bp低い。ただし、ルールは供給ショック(エネルギー)を一時的なものとして見過ごす判断や、政策効果の遅れを考慮しない。物価の基調(刈込平均PCE)が低めであることは、FRBが追加利上げを急がない根拠になりうる。12/9-10のFOMCでは、コア物価の3か月年率とエネルギーの下落のどちらを重く見るかが焦点になる。</p>
+
+<h3>債券・株式・信用</h3>
+<div class="two">
+<figure><figcaption>米国債利回り(%)と統計の公表日<span class="src">出所:米財務省(DGS2, DGS10)via FRED。縦線は主要統計の公表日。</span></figcaption><div class="chart" data-chart="yld"></div></figure>
+<figure><figcaption>S&amp;P500<span class="src">出所:S&amp;P Dow Jones Indices(SP500)via FRED</span></figcaption><div class="chart" data-chart="spx"></div></figure>
+</div>
+<p><span class="tag f">事実</span>10/23→11/20に、2年債利回り{{y2}}bp({{y2_1}}%)、10年債{{y10}}bp({{y10_1}}%)、10年実質金利{{r10}}bp({{r10_1}}%)、10年BEI{{bei}}bp。S&amp;P500は{{spx0}}→{{spx1}}({{spx}}%)、VIXは{{vix0}}→{{vix1}}、HYスプレッド{{hy0}}%→{{hy1}}%({{hy}}bp)、IGスプレッド{{ig}}bp。広義ドル指数{{usd}}%。WTIは{{wti0}}→{{wti1}}ドル({{wti}}%、最新は11/17)。</p>
+<p><span class="tag f">事実</span>公表日の値動き:CPI公表日(11/10)に2年債は{{cpi_d2}}bp、10年債は{{cpi_d10}}bp上昇。2023年以降の2年債の日次変化の標準偏差は{{sd2}}bpで、CPI日の変化は約{{cpi_sig}}標準偏差。S&amp;P500の大きな下落日は11/5({{nov5}}%)と11/20({{nov20}}%)で、どちらも主要統計(雇用・CPI・PPI・小売・GDP)の公表日ではない。</p>
+<p><span class="tag i">解釈</span>指標発表日の金利反応で情報の重みを測る手法(Gürkaynak, Sack &amp; Swanson 2005)に従えば、期間中に市場が最も反応した統計はCPIで、物価への感応度が高い。株価の急落は統計公表と重ならず、マクロ統計以外の要因によるとみられるが、一次統計からは原因を特定できない。名目金利の低下は期待インフレの低下(原油安)によるもので、実質金利はむしろ上昇しており、株式にとって金融環境は引き締まった。社債スプレッドの拡大は将来の景気の弱さに先行する傾向がある(Gilchrist &amp; Zakrajšek 2012)。週次の金融環境指数(NFCI {{nfci}}、セントルイス連銀ストレス指数 {{stl}})は11/13時点までで、月末の急変をまだ反映していない。</p>
+
+<h3>景気後退確率</h3>
+<p><span class="tag f">事実</span>10年−3か月金利差の10月平均は{{spr_oct}}%pt(11/23時点{{s10y3m}})。これをNY連銀型のプロビット(Estrella &amp; Mishkin 1998の係数)に当てはめた12か月先の景気後退確率は{{prob}}%(本研究所の近似計算)。Chauvet-Pigerの平滑化確率(9月)は{{cp}}%。</p>
+<p><span class="tag i">解釈</span>金利差、サーム・ルール、実体指標のいずれも、景気後退が近いことを示していない。リスクは景気の側より、物価と金融市場の側にある。</p>
+</div></section>
+
+<section id="outlook"><div class="no">06</div><div class="body">
+<h2>総合評価と次の確認点</h2>
+<p><span class="tag i">解釈</span>米国経済は「強い成長・3%前後のコア物価・均衡した労働市場」という組み合わせにある。総合インフレを押し上げてきたエネルギーは10月下旬から下がり始め、期待インフレも低下した。一方で、家計の実質所得の停滞と低い貯蓄率、月末の金融市場の急変は、成長の持続性に対するリスクとして残る。FRBにとっては、政策ルールが示す水準と、供給ショックを見過ごす判断のあいだで難しい局面が続く。</p>
+<div class="cal">
+  <div><span>11/25</span><span>GDP改定値(7-9月期)・個人所得支出(10月):コアPCEの3か月年率、実質可処分所得</span></div>
+  <div><span>12/1</span><span>JOLTS(10月):V/Uが1を上回るか</span></div>
+  <div><span>12/4</span><span>雇用統計(11月):U-6と長期失業の割合、平均時給</span></div>
+  <div><span>12/9-10</span><span>FOMC:政策金利と経済見通し</span></div>
+  <div><span>12/10</span><span>CPI(11月):前年の低い水準による上振れを差し引いて読む</span></div>
+</div>
+<p class="src">日付は米国東部時間。FREDの発表カレンダーとFRBの公表日程による。</p>
+</div></section>
+
+<section id="verify"><div class="no">07</div><div class="body">
+<h2>検証記録と限界</h2>
+<p>数値はすべてFRED(セントルイス連銀)から取得した各公表機関のデータで、以下の検証を通ったものだけを使っています。検証は <span class="num">econ/analyze.py</span> で自動化しており、1項目でもFAILならレポートを作らない設定です。</p>
+<div class="tw"><table>
+<thead><tr><th>結果</th><th>検証項目</th><th>根拠の数値</th><th>方法</th></tr></thead>
+<tbody>
+{{VER_ROWS}}
+</tbody></table></div>
+<h3>限界</h3>
+<ul>
+  <li>この環境から到達できる公的サイトはFREDのみで、BLS・BEA・Census・ALFREDの原文には到達できない。そのため<b>初回公表値と改定幅は検証できない</b>。本号の数値は取得時点の最新改定後の値。</li>
+  <li>2025年10月の家計調査とCPIは欠測。この月をまたぐ前年比は計算せず、13か月年率などで代替した。</li>
+  <li>民間予想(コンセンサス)は一次情報で確認できないため、予想との比較(サプライズ)は扱わない。代わりに過去の分布での位置(z値、パーセンタイル)で強弱を示した。</li>
+  <li>政策ルールと景気後退確率は、公表されている係数を使った本研究所の計算で、公式推計ではない。</li>
+</ul>
+</div></section>
+
+<section id="refs"><div class="no">08</div><div class="body">
+<h2>参照した学術研究</h2>
+<ol class="ref">
+<li>Benigno, P. &amp; Eggertsson, G. (2023). "It's Baaack: The Surge in Inflation in the 2020s and the Return of the Non-Linear Phillips Curve." NBER Working Paper 31197.</li>
+<li>Bryan, M. &amp; Cecchetti, S. (1994). "Measuring Core Inflation." In N. G. Mankiw (ed.), <i>Monetary Policy</i>, NBER / University of Chicago Press.</li>
+<li>Bryan, M. &amp; Meyer, B. (2010). "Are Some Prices in the CPI More Forward Looking Than Others? We Think So." Federal Reserve Bank of Atlanta, <i>Economic Commentary</i>.</li>
+<li>Coibion, O. &amp; Gorodnichenko, Y. (2015). "Is the Phillips Curve Alive and Well after All? Inflation Expectations and the Missing Disinflation." <i>American Economic Journal: Macroeconomics</i> 7(1).</li>
+<li>Dolmas, J. (2005). "Trimmed Mean PCE Inflation." Federal Reserve Bank of Dallas Working Paper 0506.</li>
+<li>Estrella, A. &amp; Mishkin, F. (1998). "Predicting U.S. Recessions: Financial Variables as Leading Indicators." <i>Review of Economics and Statistics</i> 80(1).</li>
+<li>Gilchrist, S. &amp; Zakrajšek, E. (2012). "Credit Spreads and Business Cycle Fluctuations." <i>American Economic Review</i> 102(4).</li>
+<li>Gürkaynak, R., Sack, B. &amp; Swanson, E. (2005). "The Sensitivity of Long-Term Interest Rates to Economic News." <i>American Economic Review</i> 95(1).</li>
+<li>Hamilton, J. (2003). "What Is an Oil Shock?" <i>Journal of Econometrics</i> 113(2).</li>
+<li>Okun, A. (1962). "Potential GNP: Its Measurement and Significance." <i>Proceedings of the Business and Economic Statistics Section</i>, American Statistical Association.</li>
+<li>Sahm, C. (2019). "Direct Stimulus Payments to Individuals." In <i>Recession Ready</i>, The Hamilton Project / Washington Center for Equitable Growth.</li>
+<li>Taylor, J. (1993). "Discretion versus Policy Rules in Practice." <i>Carnegie-Rochester Conference Series on Public Policy</i> 39.</li>
+<li>Yellen, J. (2012). "Perspectives on Monetary Policy." Speech at the Boston Economic Club, June 6, 2012.</li>
+</ol>
+</div></section>
+</div>
+
+<script id="chartdata" type="application/json">{{CHARTS}}</script>
+<script>
+(function(){
+const D=JSON.parse(document.getElementById('chartdata').textContent);
+const NS='http://www.w3.org/2000/svg', COL=['var(--s1)','var(--s2)','var(--s3)'];
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const fmt=(v,u)=>(Math.abs(v)>=1000?v.toLocaleString('en-US',{maximumFractionDigits:0}):v.toFixed(2))+(u==='%'?'%':u==='%pt'?'pt':'');
+function nice(lo,hi,n){const st=Math.pow(10,Math.floor(Math.log10((hi-lo)/n)));const c=[1,2,2.5,5,10].map(m=>m*st).find(s=>(hi-lo)/s<=n)||st*10;
+  const out=[];for(let v=Math.ceil(lo/c)*c;v<=hi+1e-9;v+=c)out.push(+v.toFixed(6));return out}
+function draw(box){
+  const c=D[box.dataset.chart]; box.innerHTML='';
+  const W=Math.max(280,box.clientWidth), H=c.type==='hbar'?190:Math.round(Math.min(300,Math.max(200,W*.42)));
+  if(c.series.length>1||c.ref){const lg=document.createElement('div');lg.className='legend';
+    c.series.forEach((s,i)=>{lg.insertAdjacentHTML('beforeend',`<span><i style="background:${COL[i]}"></i>${s.name}</span>`)});
+    if(c.ref)lg.insertAdjacentHTML('beforeend',`<span><i style="background:var(--axis);height:1px"></i>${c.refLabel}</span>`);box.appendChild(lg)}
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':c.series.map(s=>s.name).join('、')},box);
+  const tip=document.createElement('div');tip.className='tip';tip.hidden=true;box.appendChild(tip);
+  if(c.type==='hbar'){
+    const d=c.series[0].data, L=78,R=W-16, T=6, rh=(H-T-24)/d.length;
+    const lo=Math.min(0,...d.map(x=>x[1])), hi=Math.max(0,...d.map(x=>x[1]));
+    const ticks=nice(lo,hi,5), x0=Math.min(lo,ticks[0]), x1=Math.max(hi,ticks[ticks.length-1]);
+    const X=v=>L+(v-x0)/(x1-x0)*(R-L);
+    ticks.forEach(t=>{el('line',{x1:X(t),x2:X(t),y1:T,y2:H-20,stroke:'var(--grid)'},svg);el('text',{x:X(t),y:H-6,'text-anchor':'middle'},svg).textContent=t});
+    el('line',{x1:X(0),x2:X(0),y1:T,y2:H-20,stroke:'var(--axis)'},svg);
+    d.forEach((r,i)=>{const y=T+i*rh+rh*.2, h=rh*.6, a=X(Math.min(0,r[1])), b=X(Math.max(0,r[1]));
+      el('text',{x:L-8,y:y+h/2+4,'text-anchor':'end',style:'fill:var(--ink);font-family:var(--f-body);font-size:12px'},svg).textContent=r[0];
+      const rc=el('rect',{x:a,y,width:Math.max(1,b-a),height:h,rx:3,fill:r[1]<0?'var(--s2)':'var(--s1)'},svg);
+      el('text',{x:r[1]<0?a-5:b+5,y:y+h/2+4,'text-anchor':r[1]<0?'end':'start',style:'fill:var(--ink)'},svg).textContent=(r[1]>0?'+':'')+r[1].toFixed(2);
+    });return}
+  const series=c.series.map(s=>({...s,data:s.data.filter(p=>!c.start||p[0]>=c.start)}));
+  const all=series.flatMap(s=>s.data), xs=[...new Set(all.map(p=>p[0]))].sort();
+  const ys=all.map(p=>p[1]).concat(c.ref!=null?[c.ref]:[]).concat(c.type==='bar'?[0]:[]);
+  let lo=Math.min(...ys), hi=Math.max(...ys); const pad=(hi-lo)*.08||1; lo-=pad; hi+=pad;
+  const ticks=nice(lo,hi,5); lo=Math.min(lo,ticks[0]); hi=Math.max(hi,ticks[ticks.length-1]);
+  const L=52,R=W-12,T=10,B=H-26, t0=new Date(xs[0]), t1=new Date(xs[xs.length-1]);
+  const X=c.type==='bar'?(d=>L+(xs.indexOf(d)+.5)/xs.length*(R-L)):(d=>L+(new Date(d)-t0)/(t1-t0||1)*(R-L));
+  const Y=v=>B-(v-lo)/(hi-lo)*(B-T);
+  ticks.forEach(t=>{el('line',{x1:L,x2:R,y1:Y(t),y2:Y(t),stroke:'var(--grid)'},svg);
+    el('text',{x:L-6,y:Y(t)+4,'text-anchor':'end'},svg).textContent=Math.abs(t)>=1000?t.toLocaleString('en-US'):t});
+  const nx=Math.max(2,Math.floor((R-L)/90)), step=Math.ceil(xs.length/nx);
+  xs.forEach((d,i)=>{if(i%step===0)el('text',{x:X(d),y:H-8,'text-anchor':'middle'},svg).textContent=d.slice(2,7).replace('-','/')+(xs.length<80&&c.type!=='bar'?'/'+d.slice(8):'')});
+  if(c.ref!=null){el('line',{x1:L,x2:R,y1:Y(c.ref),y2:Y(c.ref),stroke:'var(--axis)','stroke-dasharray':'4 3'},svg)}
+  (c.marks||[]).forEach(m=>{if(m[0]>=xs[0]&&m[0]<=xs[xs.length-1])el('line',{x1:X(m[0]),x2:X(m[0]),y1:T,y2:B,stroke:'var(--axis)','stroke-dasharray':'1 3'},svg)});
+  if(c.type==='bar'){const bw=Math.max(2,(R-L)/xs.length-3);
+    series[0].data.forEach(p=>{const y0=Y(0),y1=Y(p[1]);el('rect',{x:X(p[0])-bw/2,y:Math.min(y0,y1),width:bw,height:Math.max(1,Math.abs(y1-y0)),rx:2,fill:p[1]<0?'var(--s2)':'var(--s1)'},svg)});
+    el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),stroke:'var(--axis)'},svg)}
+  else series.forEach((s,i)=>{el('path',{d:s.data.map((p,j)=>(j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(''),fill:'none',stroke:COL[i],'stroke-width':2,'stroke-linejoin':'round'},svg);
+    const lp=s.data[s.data.length-1];el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:3.5,fill:COL[i],stroke:'var(--paper)','stroke-width':2},svg)});
+  const cross=el('line',{y1:T,y2:B,stroke:'var(--axis)',visibility:'hidden'},svg);
+  const hit=el('rect',{x:L,y:T,width:R-L,height:B-T,fill:'transparent'},svg);
+  const move=e=>{const r=svg.getBoundingClientRect(), px=(e.clientX-r.left)*W/r.width;
+    let best=xs[0],bd=1e9;xs.forEach(d=>{const dd=Math.abs(X(d)-px);if(dd<bd){bd=dd;best=d}});
+    cross.setAttribute('x1',X(best));cross.setAttribute('x2',X(best));cross.setAttribute('visibility','visible');
+    const mk=(c.marks||[]).find(m=>m[0]===best);
+    tip.innerHTML=best+(mk?' · '+mk[1]:'')+'<br>'+series.map((s,i)=>{const p=s.data.find(q=>q[0]===best);return p?`<span style="color:${COL[i]}">■</span> ${s.name}: ${fmt(p[1],c.unit)}`:''}).filter(Boolean).join('<br>');
+    tip.hidden=false;const bx=box.getBoundingClientRect(), tx=e.clientX-bx.left;
+    tip.style.left=Math.min(Math.max(0,tx+12),bx.width-tip.offsetWidth)+'px';tip.style.top=(e.clientY-bx.top+12)+'px'};
+  hit.addEventListener('pointermove',move);hit.addEventListener('pointerdown',move);
+  hit.addEventListener('pointerleave',()=>{tip.hidden=true;cross.setAttribute('visibility','hidden')});
+}
+const boxes=[...document.querySelectorAll('.chart')];
+const run=()=>boxes.forEach(draw); run();
+let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(run,150)});
+})();
+</script>
